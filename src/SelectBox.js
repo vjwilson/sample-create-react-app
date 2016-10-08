@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './SelectBox.css';
+import Helpers from './Helpers';
 
 class SelectBox extends Component {
   render() {
     const listItems = this.props.list.map((listItem) => {
-      const id = listItem.toLowerCase().replace(' ', '-');
+      const id = Helpers.makeCssId(listItem);
 
       return (
         <option key={id} value={id}>{listItem}</option>
